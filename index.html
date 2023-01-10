@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>OCR Example</title>
+</head>
+<body>
+  <h1>OCR Example</h1>
+
+  <form>
+    <label for="image-file">Select an image file:</label>
+    <input type="file" id="image-file">
+  </form>
+  
+  <div id="output"></div>
+  
+  <script src="path/to/tesseract.js"></script>
+  <script>
+    const imageFile = document.getElementById('image-file');
+    const output = document.getElementById('output');
+  
+    imageFile.addEventListener('change', () => {
+      const file = imageFile.files[0];
+      Tesseract.recognize(file)
+        .then(result => {
+          output.textContent = result.text;
+        })
+    });
+  </script>  
+</body>
+</html>
