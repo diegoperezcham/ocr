@@ -1,4 +1,4 @@
-const createWorker = require('./createWorker');
+const createWorker = require('createWorker.js');
 
 const recognize = async (image, langs, options) => {
   const worker = await createWorker(options);
